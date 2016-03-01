@@ -1,6 +1,5 @@
-package com.searchNotes;
+package com.notes.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -52,15 +51,32 @@ public class SearchCriteria {
 		if (getClass() != obj.getClass())
 			return false;
 		SearchCriteria searchCriteria = (SearchCriteria) obj;
-
 		// if id is equal,then object is equal----return true
-
 		if (this.id == searchCriteria.id) {
 			return true;
 		} 
 			return false;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 * @Override public int hashCode() { if(searchFlag){ return 0; }else{ return
 	 * id; } }

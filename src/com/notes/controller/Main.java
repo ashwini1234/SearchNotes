@@ -1,9 +1,12 @@
-package com.searchNotes;
+package com.notes.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
+
+import com.notes.model.Note;
+import com.notes.model.SearchCriteria;
 
 /**
  * 

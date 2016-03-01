@@ -1,4 +1,4 @@
-package com.searchNotes;
+package com.notes.model;
 
 //Notes is value of HashMap<SearchCriteria, Notes>
 
