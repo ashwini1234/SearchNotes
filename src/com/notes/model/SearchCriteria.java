@@ -30,16 +30,49 @@ public class SearchCriteria {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public SearchCriteria() {
+		super();
+	}
 
 	public SearchCriteria(int id, List<String> list) {
 		super();
 		this.id = id;
 		this.searchList = list;
 	}
+	
+	
+	/**
+	 * 
+	 *  [Java, Spring, Interview]:Notes1
+	 	[Spring, DI, AOP]:Notes2
+		[Java, Hibernate, Oracle, Interview]:Notes3
+		
+		userSearch:Java, Spring
+		Result: Notes 1 and Notes 3
+	 * 
+	 * @param sc
+	 * @return
+	 */
+	public int matchLevel(SearchCriteria sc){
+		int count=0;
+		for(String k: sc.getSearchList()){
+			for(String s:this.searchList){
+				if(s.toLowerCase().contains(k.toLowerCase())){
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 
 	@Override
 	public int hashCode() {
-		return id;
+		if(searchFlag){
+			return 0;
+		}else{
+			return id;
+		}
 	}
 
 	@Override
@@ -51,11 +84,23 @@ public class SearchCriteria {
 		if (getClass() != obj.getClass())
 			return false;
 		SearchCriteria searchCriteria = (SearchCriteria) obj;
-		// if id is equal,then object is equal----return true
-		if (this.id == searchCriteria.id) {
-			return true;
-		} 
-			return false;
+		if(searchFlag){
+			//check containsKey
+			for(String s:searchCriteria.getSearchList()){
+				for(String str:this.searchList){
+					if(s.equals(str)){
+						
+					}
+				}
+			}		
+		}else{
+			// if id is equal,then object is equal----return true
+			if (this.id == searchCriteria.id) {
+				return true;
+			} return false;
+		}
+		return false;
+		
 	}
 
 	
