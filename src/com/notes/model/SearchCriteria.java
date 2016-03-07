@@ -1,6 +1,7 @@
 package com.notes.model;
 
 import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * 
@@ -40,8 +41,12 @@ public class SearchCriteria {
 		this.id = id;
 		this.searchList = list;
 	}
-	
-	
+		
+	public SearchCriteria(List<String> searchList) {
+		super();
+		this.searchList = searchList;
+	}
+
 	/**
 	 * 
 	 *  [Java, Spring, Interview]:Notes1
@@ -65,6 +70,7 @@ public class SearchCriteria {
 		}
 		return count;
 	}
+	
 
 	@Override
 	public int hashCode() {
