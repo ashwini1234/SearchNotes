@@ -1,5 +1,6 @@
 package com.notes.controller;
 
+import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +33,7 @@ public class Main {
 		List <Entry<SearchCriteria, Note>> searchResults =database.searchNote(sc1);
 		
 		if(!searchResults.isEmpty() && searchResults !=null){
+			System.out.println("Search Results are:");
 			database.printEntryList(searchResults);
 		}else{
 			System.out.println("No matches found for the search criteria entered");
@@ -43,6 +45,10 @@ public class Main {
 		Map.Entry<SearchCriteria, Note> entry=new AbstractMap.SimpleEntry<SearchCriteria, Note>
 							(sc1,note2);
 		database.editData(entry);
+		System.out.println("Notes after Editing");
+		database.printEntryList(searchResults);
+		
+		
 
 		
 

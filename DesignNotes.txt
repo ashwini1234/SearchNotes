@@ -1,0 +1,96 @@
+public HashMap<SearchCriteria, Notes> map
+
+Search Db(Our HashMap)
+
+id,Java,Spring,Interview---note1
+id.Spring,DI,AOP---note2
+id,Java,Hibernate,Oracle---note3
+id,Java,Spring,Interview---note4
+
+user Entered Search Criteria: Java,Spring
+
+Result:Note1
+		note3
+		
+
+
+
+Searching---flag
+
+Search Operation:(Read)
+Check Key--return hardcoded in hashCode()[say 0]----Go to equals-- containsKey()
+
+Not Searching(Insert,Delete,Update)
+
+Insert
+search using ID
+hashcode()---return id;
+equals()--if id is equal,then object is equal----return true
+
+
+public int hashcode(){
+	if(searchFlag){
+		return 0;
+	}else{
+		return id;
+	}
+}
+
+
+equals(){
+if(searchFlag){
+		//check containsKey()
+	}else{
+		// if id is equal,then object is equal----return true
+	}
+}
+
+
+
+
+
+
+
+
+
+  Requirements: 
+	1. HTML5 - to show the basic UI - for search/view/add/update
+	2. JavaScript - A Rest library to communicate with the backend - to fetch data and display in the page.
+	3. Java Code - Rest Webservices to communicate with the client
+	4. The page should run on an Tomcat.
+	5. Spring AOP and DI to make sure the individual jar files are absolutely independent.
+	6. Ensure that the application is portable - by keeping the data and executable in one single folder, ensuring the database is extracted 
+
+	Version 1: 
+					1. Plain UI - to add / edit / search / view notes
+					2. Save data in a single Serialized object file for the HashMap.
+					3. Java Code - gather information into a HashMap that is loaded on start and saved on every change.
+	Version 2: 
+					1. Plain UI - to add / edit / search / view notes
+					2. Save data in JSON files. 26 files with index tables. Search using these index tables. 
+					3. Java Code - gather JSON from the web service and save it in the JSON files as it is.
+	Version 3:
+					1. Improved UI with Angular JS
+					2. Save the Index data in an H2 database. Notes in Files
+					3. Wrap the Tomcat in a cute Swing Application - so that it can be nicely and managed started on a click.
+	Version 4: 
+					1. Jazzy Responsive UI with bootstrap
+					2. Save all the data in a NoSQL database - with JSON transactions throughout
+					
+Database:	Use H2 database jar/SQL Lite-firefox plugin				
+
+Notes being huge data to be stored in separate xml files
+
+Write a dao file-with sql queries and jdbc code(Query---1st query wch checks with strts with J,then filter all strting with J and search
+					
+	Search Criteria
+	
+	ID	starts with char	SearchList						NotesId
+	1			J				Java					id of xml file which contains Notes (1)
+	2			S			  Spring
+	
+	Notes
+	
+	ID	NotesFile
+	1	Name of xml file(123.txt)
+	
